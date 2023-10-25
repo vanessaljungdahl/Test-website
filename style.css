@@ -1,0 +1,107 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: url(header2.jpg) no-repeat center center fixed; 
+/*  From https://css-tricks.com/perfect-full-page-background-image/*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #e2dbdb;
+  font-family: 'Aboreto', serif;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #e2dbdb;
+  letter-spacing: 0.1em;
+ }
+
+.buffer {
+  height: 10rem;
+}
+
+
+
+.btn {
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+}
+
+.btn-primary {
+background-color: #F05F44;
+border-color: #F05F44;
+}
+
+.btn-primary:hover {
+  background-color: #EE4B08;
+  border-color: #EE4B08;
+  border-width: 2px;
+  
+}
+
+.btn-xl {
+  padding: 1rem 2rem; 
+/*  padding gör "väggarna" bredare i 
+elementet medan margin skjuter undan utanför element*/
+
+}
+
+
+button{
+  position:relative;
+  overflow:hidden;
+  margin-top:50px;
+  padding:20px 20px;
+  font-weight:400;
+  font-size:1em;
+  border-radius:100px;
+  letter-spacing: 0.1em;
+  border:0;
+  color:#FFFFFF;
+  text-transform:uppercase;
+  background-color:#E4D00A;
+  opacity: 0.9;
+}
+
+/*        sheen effect      */
+/*This is the base aniamtion*/
+.sheen:after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+/*This activates the sheen once the button has been hovered*/
+.sheen:hover::after, button:focus::after {
+  animation: sheen 1s forwards;
+}
+@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+
+button:active{
+  box-shadow:0px 0px 0px white;
+  -webkit-box-shadow: inset -2px 2px 2px #ccc;
+  -moz-box-shadow:    inset -2px 2px 2px #ccc;
+  box-shadow:         inset -2px 2px 2px #ccc;
+  transform:translate(0, 2px);
+  color:#FFC491;
+  background-color:#EDE358;
+}
+button:focus{
+  outline:0;
+}
